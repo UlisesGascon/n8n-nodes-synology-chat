@@ -1,47 +1,67 @@
-![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
+<p align="center"><h1 align="center">
+  n8n-nodes-synology-chat
+</h1>
 
-# n8n-nodes-starter
+<p align="center">
+  N8N node for Synology Chat
+</p>
 
-This repo contains example nodes to help you get started building your own custom integrations for [n8n](n8n.io). It includes the node linter and other dependencies.
-
-To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
-
-## Prerequisites
-
-You need the following installed on your development machine:
-
-* [git](https://git-scm.com/downloads)
-* Node.js and npm. Minimum version Node 16. You can find instructions on how to install both using nvm (Node Version Manager) for Linux, Mac, and WSL [here](https://github.com/nvm-sh/nvm). For Windows users, refer to Microsoft's guide to [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
-* Install n8n with:
-	```
-	npm install n8n -g
-	```
-* Recommended: follow n8n's guide to [set up your development environment](https://docs.n8n.io/integrations/creating-nodes/build/node-development-environment/).
+<p align="center">
+  <a href="https://www.npmjs.org/package/n8n-nodes-synology-chat"><img src="https://badgen.net/npm/v/n8n-nodes-synology-chat" alt="npm version"/></a>
+  <a href="https://www.npmjs.org/package/n8n-nodes-synology-chat"><img src="https://badgen.net/npm/license/n8n-nodes-synology-chat" alt="license"/></a>
+  <a href="https://www.npmjs.org/package/n8n-nodes-synology-chat"><img src="https://badgen.net/npm/dt/n8n-nodes-synology-chat" alt="downloads"/></a>
+  <a href="https://snyk.io/test/github/ulisesgascon/n8n-nodes-synology-chat"><img src="https://snyk.io/test/github/ulisesgascon/n8n-nodes-synology-chat/badge.svg" alt="Known Vulnerabilities"/></a>
+</p>
 
 
-## Using this starter
 
-These are the basic steps for working with the starter. For detailed guidance on creating and publishing nodes, refer to the [documentation](https://docs.n8n.io/integrations/creating-nodes/).
+## About 
+This is an n8n community node. It lets you use Synology Chat in your n8n workflows.
 
-1. [Generate a new repository](https://github.com/n8n-io/n8n-nodes-starter/generate) from this template repository.
-2. Clone your new repo:
-    ```
-    git clone https://github.com/<your organization>/<your-repo-name>.git
-    ```
-3. Run `npm i` to install dependencies.
-4. Open the project in your editor.
-5. Browse the examples in `/nodes` and `/credentials`. Modify the examples, or replace them with your own nodes.
-6. Update the `package.json` to match your details.
-7. Run `npm run lint` to check for errors or `npm run lintfix` to automatically fix errors when possible.
-8. Test your node locally. Refer to [Run your node locally](https://docs.n8n.io/integrations/creating-nodes/test/run-node-locally/) for guidance.
-9. Replace this README with documentation for your node. Use the [README_TEMPLATE](README_TEMPLATE.md) to get started.
-10. Update the LICENSE file to use your details.
-11. [Publish](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) your package to npm.
+Synology Chat allows you to communicate easily and securely with an all-in-one, license-free, and private cloud messaging service.
 
-## More information
+[n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
-Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/creating-nodes/) for detailed information on building your own nodes.
+[Installation](#installation)  
+[Operations](#operations)  
+[Credentials](#credentials)  <!-- delete if no auth needed -->  
+[Compatibility](#compatibility)  
+[Usage](#usage)  <!-- delete if not using this section -->  
+[Resources](#resources)  
 
-## License
+## Installation
 
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
+
+## Operations
+
+- Send Message to any user in the Chat including rich media options.
+
+By default includes the support for non-valid SSL Synology instances, [see](https://github.com/UlisesGascon/n8n-nodes-synology-chat#disable-ssl-validation)
+
+## Credentials
+
+You will need to create a new integration in Synology chat `User Profile > Integration`, [full documentation](https://kb.synology.com/en-us/DSM/tutorial/How_to_configure_webhooks_and_slash_commands_in_Chat_Integration#x_anchor_id5)
+
+You will need to include the details in the credentials sections
+
+![credentials](.github/img/credentials.png)
+
+
+## Compatibility
+
+Tested against n8n v0.215.1
+
+## Usage
+
+
+This Node will help you to send messages to specific users in the chat. It can't listen for changes/responses or participate in channels (yet).
+
+![usage](.github/img/usage.png)
+
+## Resources
+
+* [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
+* [Synology Chat](https://www.synology.com/en-us/dsm/feature/chat)
+* [Synology Chat Chatbot Documentation](https://kb.synology.com/en-us/DSM/tutorial/How_to_configure_webhooks_and_slash_commands_in_Chat_Integration#x_anchor_id5)
+
