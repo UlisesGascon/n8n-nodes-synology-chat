@@ -53,15 +53,15 @@ export class SynologyChat implements INodeType {
 				default: 'sendMessage',
 			},
 			{
-				displayName: 'User Id',
+				displayName: 'User ID',
 				name: 'userId',
 				type: 'number',
 				default: '',
 				placeholder: '',
-				description: 'The destination User Id',
+				description: 'The destination User ID',
 			},
 			{
-				displayName: 'text',
+				displayName: 'Text',
 				name: 'text',
 				type: 'string',
 				default: 'Hello World!',
