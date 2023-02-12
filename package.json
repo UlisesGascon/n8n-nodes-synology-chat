@@ -47,5 +47,8 @@
     "n8n-workflow": "*",
     "prettier": "2.7.1",
     "typescript": "4.8.4"
+  },
+  "dependencies": {
+    "synology-chat-communicator": "1.0.0"
   }
 }
