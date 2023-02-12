@@ -1,19 +1,18 @@
 {
-  "name": "n8n-nodes-<...>",
-  "version": "0.1.0",
-  "description": "",
+  "name": "n8n-nodes-synology-chat",
+  "version": "1.0.0",
+  "description": "N8N node for Synology Chat",
   "keywords": [
     "n8n-community-node-package"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/UlisesGascon/n8n-nodes-synology-chat",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Ulises Gascon"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/UlisesGascon/n8n-nodes-synology-chat.git"
   },
   "main": "index.js",
   "scripts": {
@@ -21,7 +20,7 @@
     "dev": "tsc --watch",
     "format": "prettier nodes credentials --write",
     "lint": "eslint nodes credentials package.json",
-    "lintfix": "eslint nodes credentials package.json --fix",
+    "lint:fix": "eslint nodes credentials package.json --fix",
     "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json"
   },
   "files": [
@@ -30,23 +29,25 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/ExampleCredentialsApi.credentials.js",
-      "dist/credentials/HttpBinApi.credentials.js"
+      "dist/credentials/SynologyChatApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/ExampleNode/ExampleNode.node.js",
-      "dist/nodes/HttpBin/HttpBin.node.js"
+      "dist/nodes/SynologyChat/SynologyChat.node.js"
     ]
   },
   "devDependencies": {
-    "@types/express": "^4.17.6",
-    "@types/request-promise-native": "~1.0.15",
-    "@typescript-eslint/parser": "~5.45",
-    "eslint-plugin-n8n-nodes-base": "^1.11.0",
-    "gulp": "^4.0.2",
+    "@types/express": "4.17.6",
+    "@types/request-promise-native": "1.0.15",
+    "@typescript-eslint/parser": "5.45",
+    "eslint-plugin-n8n-nodes-base": "1.11.0",
+    "gulp": "4.0.2",
     "n8n-core": "*",
     "n8n-workflow": "*",
-    "prettier": "^2.7.1",
-    "typescript": "~4.8.4"
+    "prettier": "2.7.1",
+    "typescript": "4.8.4",
+    "eslint": "8.34.0"
+  },
+  "dependencies": {
+    "synology-chat-communicator": "1.0.0"
   }
 }
