@@ -83,6 +83,7 @@ export class SynologyChat implements INodeType {
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
 		const items = this.getInputData();
 		const { token, baseUrl, ignoreSSLErrors } = await this.getCredentials('synologyChatApi')
+		const NodeTLSRejectUnauthorized = process.env.NODE_TLS_REJECT_UNAUTHORIZED
 		const { sendDirectMessage } = synologyChatCommunicator({token, baseUrl, ignoreSSLErrors})
 
 		let item: INodeExecutionData;
@@ -106,6 +107,12 @@ export class SynologyChat implements INodeType {
 				item.json['mediaLink'] = mediaLink;
 				if(operation === 'sendMessage'){
 					item.json['response'] = await sendDirectMessage(userId, text, mediaLink)
+					
+					if(ignoreSSLErrors){
+						// Restoring the original TLS state to avoid side effects
+						// @SEE: https://github.com/UlisesGascon/synology-chat-communicator/blob/main/src/utils.js#L5
+						process.env.NODE_TLS_REJECT_UNAUTHORIZED = NodeTLSRejectUnauthorized
+					}
 				}
 				
 			} catch (error) {
