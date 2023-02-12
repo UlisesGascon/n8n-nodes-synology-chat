@@ -25,7 +25,7 @@ export class SynologyChatApi implements ICredentialType {
 			description: 'The Synology Chat Url (including port)',
 		},
 		{
-			displayName: 'Ignore SSL Errors',
+			displayName: 'Disable SSL Validation',
 			name: 'ignoreSSLErrors',
 			type: 'boolean',
 			default: false,
