@@ -32,12 +32,11 @@ export class SynologyChatApi implements ICredentialType {
 			description: 'If set to true, all SSL errors will be ignored.',
 		}
 	];
-
-	// @TODO: Ensure SSL validation can be ignored
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: '{{$credentials.baseUrl}}',
-			url: '/webapi/entry.cgi?api=SYNO.Chat.External&method=user_list&version=2',
+			baseURL: '={{$credentials.baseUrl}}',
+			url: '={{"/webapi/entry.cgi?api=SYNO.Chat.External&method=user_list&version=2&token=%22" + $credentials.token + "%22"}}',
+			skipSslCertificateValidation: '={{$credentials.ignoreSSLErrors}}',
 		},
 	};
 }
