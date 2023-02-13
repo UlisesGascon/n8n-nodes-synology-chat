@@ -48,6 +48,14 @@ export class SynologyChat implements INodeType {
 					{
 						name: 'Send Message',
 						value: 'sendMessage',
+					},
+					{
+						name: 'List All Channels',
+						value: 'getChannels',
+					},
+					{
+						name: 'List All Users',
+						value: 'getUsers',
 					}
 				],
 				default: 'sendMessage',
@@ -98,7 +106,7 @@ export class SynologyChat implements INodeType {
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
 		const items = this.getInputData();
 		const { token, baseUrl, ignoreSSLErrors } = await this.getCredentials('synologyChatApi')
-		const { sendDirectMessage } = synologyChatCommunicator({token, baseUrl, ignoreSSLErrors})
+		const { sendDirectMessage, getChannels, getUsers } = synologyChatCommunicator({token, baseUrl, ignoreSSLErrors})
 
 		let item: INodeExecutionData;
 		let operation: string;
@@ -122,6 +130,14 @@ export class SynologyChat implements INodeType {
 
 				if(operation === 'sendMessage'){
 					item.json['response'] = await sendDirectMessage(userId, text, mediaLink)
+				}
+
+				if(operation === 'getUsers'){
+					item.json['response'] = await getUsers()
+				}
+
+				if(operation === 'sendMessage'){
+					item.json['response'] = await getChannels()
 				}
 				
 			} catch (error) {
