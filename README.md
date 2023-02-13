@@ -28,6 +28,7 @@ Synology Chat allows you to communicate easily and securely with an all-in-one, 
 [Compatibility](#compatibility)  
 [Usage](#usage)  <!-- delete if not using this section -->  
 [Resources](#resources)  
+[Versions](#Versions)
 
 ## Installation
 
@@ -65,3 +66,11 @@ This Node will help you to send messages to specific users in the chat. It can't
 * [Synology Chat](https://www.synology.com/en-us/dsm/feature/chat)
 * [Synology Chat Chatbot Documentation](https://kb.synology.com/en-us/DSM/tutorial/How_to_configure_webhooks_and_slash_commands_in_Chat_Integration#x_anchor_id5)
 
+
+## Versions
+
+| n8n-nodes-synology-chat version | synology-chat-communicator version | Changelog |
+|----------|:-------------:|------:|
+| 1.0.0 |  1.0.0 | [synology-chat-communicator@1.0.0](https://github.com/UlisesGascon/synology-chat-communicator/releases/tag/v1.0.0) |
+| 1.1.0 |  1.1.0 | [synology-chat-communicator@1.1.0](https://github.com/UlisesGascon/synology-chat-communicator/releases/tag/v1.1.0) |
+    
