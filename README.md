@@ -37,6 +37,13 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 ## Operations
 
 - Send Message to any user in the Chat including rich media options.
+- Generate a list of all the available channels for the robot
+- Generate a list of all the available users for the robot
+
+
+### Notes
+
+It can't listen for changes/responses or participate in channels (yet).
 
 By default includes the support for non-valid SSL Synology instances, [see](https://github.com/UlisesGascon/n8n-nodes-synology-chat#disable-ssl-validation)
 
@@ -56,9 +63,15 @@ Tested against n8n v0.215.1
 ## Usage
 
 
-This Node will help you to send messages to specific users in the chat. It can't listen for changes/responses or participate in channels (yet).
+This Node will help you to send messages to specific users in the chat. 
 
+### Setup
 ![usage](.github/img/usage.png)
+
+
+### Simple Example
+
+![usage](.github/img/usage_operations.png)
 
 ## Resources
 
